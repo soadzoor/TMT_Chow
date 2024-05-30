@@ -1,0 +1,58 @@
+{
+	"name": "typescript-react",
+	"version": "0.0.1",
+	"description": "TypeScript - React",
+	"main": "",
+	"type": "module",
+	"scripts": {
+		"start-dev": "npx ts-node --esm build/start.ts",
+		"build-dev": "npx ts-node --esm build/build.ts",
+		"build-prod": "npx ts-node --esm build/build.ts --prod",
+		"eslint-report": "eslint --ignore-pattern .gitignore --ext .js,.jsx,.ts,.tsx ./ --report-unused-disable-directives --max-warnings 0",
+		"eslint-fix": "npm run eslint-report -- --fix",
+		"prettier": "npx prettier . --write",
+		"tsc": "tsc",
+		"install-git-hooks": "husky install"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/soadzoor/Boilerplate_For_TypeScript_React"
+	},
+	"author": "Peter Varga <soadzoor@gmail.com>",
+	"license": "",
+	"lint-staged": {
+		"*.{ts,tsx}": [
+			"bash -c tsc -p tsconfig.json",
+			"eslint --fix"
+		]
+	},
+	"dependencies": {
+		"react": "18.3.1",
+		"react-dom": "18.3.1",
+		"styled-components": "6.1.11"
+	},
+	"devDependencies": {
+		"@types/node": "20.12.13",
+		"@types/react": "18.3.3",
+		"@types/react-dom": "18.3.0",
+		"@types/styled-components": "5.1.34",
+		"@typescript-eslint/eslint-plugin": "7.11.0",
+		"@vitejs/plugin-react": "4.3.0",
+		"esbuild": "0.21.4",
+		"esbuild-sass-plugin": "3.3.0",
+		"eslint": "9.3.0",
+		"eslint-import-resolver-typescript": "3.6.1",
+		"eslint-plugin": "1.0.1",
+		"eslint-plugin-import": "2.29.1",
+		"eslint-plugin-react-hooks": "4.6.2",
+		"eslint-plugin-unused-imports": "3.1.0",
+		"husky": "9.0.11",
+		"lint-staged": "15.2.5",
+		"prettier": "3.2.5",
+		"shx": "0.3.4",
+		"tslib": "2.6.2",
+		"typescript": "5.4.5",
+		"vite": "5.2.12",
+		"vite-tsconfig-paths": "4.3.2"
+	}
+}
